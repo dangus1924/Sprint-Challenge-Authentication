@@ -3,7 +3,7 @@
   before granting access to the next middleware/route handler
 */
 const jwt = require('jsonwebtoken');
-// const secrets = require('../api/secrets.js');
+
 
 const authenticated = (req, res, next) => {
   const token = req.headers.authentication;
