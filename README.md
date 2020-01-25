@@ -16,9 +16,9 @@ The Minimum Viable Product must be completed in three hours.
 
 Follow these steps to set up and work on your project:
 
-- [ ] Create a forked copy of this project.
-- [ ] Add your _Team Lead_ as collaborator on Github.
-- [ ] Clone your forked version of the Repository.
+- [x] Create a forked copy of this project.
+- [x] Add your _Team Lead_ as collaborator on Github.
+- [x] Clone your forked version of the Repository.
 - [ ] Create a new Branch on the clone: git checkout -b `firstName-lastName`.
 - [ ] Implement the project on this Branch, committing changes regularly.
 - [ ] Push commits: git push origin `firstName-lastName`.
@@ -39,13 +39,13 @@ Commit your code regularly and use descriptive messages. This helps both you (in
 Demonstrate your understanding of this week's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] What is the purpose of using _sessions_?
-
+        sessions are used to hide the actual values from the client and you also control when the data expires. This help to prevent hackers.
 - [ ] What does bcrypt do to help us store passwords in a secure manner.
-
+        bcrypt helps to hash the password so it is not in plain text. It takes tha password from the user and the hash the amount of time the programmer set it to. the higher the number the longer the hashing process takes. Once the password is hash it is then shown in the hash format instead of the plain text
 - [ ] What does bcrypt do to slow down attackers?
-
+        brcypt slows down the login hashing process. the best way to stop a brute force attack is to make the process slower. 
 - [ ] What are the three parts of the JSON Web Token?
-
+        The three parts of the JWT are the header, payload, and the signature
 ## Minimum Viable Product
 
 Implement an User Authentication System. Hash user's passwords before saving them to the database. Use `JSON Web Tokens` or `Sessions and Cookies` to persist authentication across requests.
