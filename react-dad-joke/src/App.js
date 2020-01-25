@@ -1,24 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, Component } from 'react';
+import View from './views/View'
+import Jokes from './views/Jokes'
+
 
 function App() {
+  const [token, setToken] = setState(false);
+  const storeToken = () => {
+    setToken(!token);
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h3>Sprint Challenge - Authentication</h3>
+      <AuthFlow storeToken={storeToken} />
+      {token ? <Jokes /> : <p>Please sign in...</p>}
     </div>
   );
 }
