@@ -7,7 +7,7 @@ const Jokes = require('../jokes/jokes-model')
 const generateToken = user => {
   const payload = {
     sub: user.id,
-    username: user,username,
+    username: user.username,
   }
   const options = {
     expiresIn: '5m',
@@ -38,11 +38,12 @@ router.post('/login', async (req, res) => {
     if (login && bcrypt.compareSync(password, login.password)) {
       const token = generateToken(login)
       res.status(200).json({
-        message: `Welcome ${user.username}!`,
+        message: `Welcome ${login.username}!`,
         token 
       })
     }
   } catch(err) {
+    console.log(err)
     res.status(500).json({
       error: err.message
     })

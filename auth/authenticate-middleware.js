@@ -6,11 +6,12 @@ const jwt = require('jsonwebtoken');
 
 
 const authenticated = (req, res, next) => {
-  const token = req.headers.authentication;
+  const token = req.headers.authorization;// here we can call this what ever we want, but convention calls this authorization
 
   if (token) {
     jwt.verify(token, process.env.JWT_SECRET, (err, decodedToken) => {
       if (err) {
+        console.log(err)
         res.status(401).end()
       } else {
         req.decodeJwt = decodedToken;
@@ -18,7 +19,7 @@ const authenticated = (req, res, next) => {
       }
     })
   } else {
-    res.status(403).end()
+    res.status(401).end()
   }
 }
 
